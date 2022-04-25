@@ -7,7 +7,7 @@ codeunit 50100 Validations
         end;
     end;
 
-    [EventSubscriber(ObjectType::Page, Page::"Customer Card", 'OnAfterValidateEvent', 'Address', false, false)]
+    [EventSubscriber(ObjectType::Page, Page::"Customer Card", 'OnBeforeValidateEvent', 'Address', false, false)]
     local procedure OnBeforeValidationAddress(Rec: Record Customer; xRec: Record Customer)
     begin
         CheckForPlusSign(Rec.Address);
